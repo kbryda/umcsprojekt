@@ -1,0 +1,67 @@
+#include <iostream>
+
+using namespace std;
+namespace testowa
+{
+    void hello()
+    {
+         std::cout<<"Hello testowa"<<std::endl;
+    }
+}
+namespace testowa2
+{
+    void hello()
+    {
+        std::cout<<"Hello testowa 2"<<std::endl;
+    }
+}
+
+namespace pt
+{
+    class Point{
+    private:
+        double x,y;
+    public:
+        void getX(){
+            std::cout<<"Podaj x :"<<std::endl;
+            std::cin>>x;
+
+        }
+        void getY(){
+            std::cout<<"Podaj y :"<<std::endl;
+    std::cin>>y;
+        }
+        void showX(){
+            std::cout<<"X wynosi :"<<x<<std::endl;
+        }
+        void showY(){
+            std::cout<<"Y wynosi :"<<y<<std::endl;
+        }
+
+        Point(){
+            x=0;
+            y=0;}
+        Point(double a,double b){
+            x=a;
+            y=b;
+        }
+    };
+
+}
+using namespace pt;
+int main()
+{
+    Point p;
+    p.getX();
+    p.getY();
+    p.showX();
+    p.showY();
+    Point();
+    Point().showX();
+    Point().showY();
+    Point(5.7,3.22);
+    Point(5.7,3.22).showX();
+    Point(5.7,3.22).showY();
+
+    return 0;
+}
