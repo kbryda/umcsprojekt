@@ -1,0 +1,39 @@
+/ Zwracanie struktury przez funkcje */
+#include <stdio.h>
+#include <conio.h>
+struct CD
+{
+char name[20];
+char description[40];
+char category[12];
+float cost;
+int number;
+} disc, getdisc();
+struct CD getdisc();
+void main()
+{
+clrscr();
+disc=getdisc();
+puts("The information on the CD is:\n\n");
+printf("Name: %s\n",disc.name);
+printf("Description: %s\n",disc.description);
+printf("Category: %s\n",disc.category);
+printf("Cost: %6.2f\n",disc.cost);
+printf("Location: %d\n",disc.number);
+} /* main */
+/* Funkcja */
+struct CD getdisc()
+{
+struct CD inputdisc;
+puts("Enter disk information\n\n");
+printf("Enter the name:");
+gets(inputdisc.name);
+printf("Enter the description:");
+gets(inputdisc.description);
+printf("Enter the category:");
+gets(inputdisc.category);
+printf("Enter the cost:");
+scanf("%f", &inputdisc.cost);printf("Enter the slot number:");
+scanf("%d", &inputdisc.number);
+return(inputdisc);
+} /* getdisk() */
